@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} - Omniversal Arsenal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles.css') }}">
+    <style>
+        body { background: #020b06; color: #eee; font-family: 'Roboto Mono', monospace; }
+        .song-page { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+        .song-page a.back-link { color: #0f0; text-decoration: none; margin-bottom: 1rem; display: inline-block; }
+        .song-header { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .song-header img { width: 200px; height: 200px; object-fit: cover; border-radius: 4px; }
+        .song-header .info { flex: 1; min-width: 250px; }
+        .song-header h1 { margin: 0 0 0.5rem; font-family: 'Orbitron', sans-serif; }
+        audio { width: 100%; margin-top: 1rem; }
+        .lyrics-container { white-space: pre-wrap; font-family: 'Roboto Mono', monospace; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 4px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="song-page">
+        <a href="/" class="back-link">&laquo; Back to Arsenal</a>
+        <div class="song-header">
+            {% if image_url %}
+            <img src="{{ image_url }}" alt="Album art for {{ title }}">
+            {% endif %}
+            <div class="info">
+                <h1>{{ title }}</h1>
+                {% if audio_url %}
+                <audio controls autoplay src="{{ audio_url }}">
+                    Your browser does not support the audio element.
+                </audio>
+                {% endif %}
+            </div>
+        </div>
+        <h2>Lyrics</h2>
+        <div class="lyrics-container">
+            {{ lyrics if lyrics else "No lyrics available for this track." }}
+        </div>
+    </div>
+</body>
+</html>

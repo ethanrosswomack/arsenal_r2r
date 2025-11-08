@@ -1,0 +1,63 @@
+<nav class="main-nav">
+    <a href="/">Home</a>
+    {% if notebooks %}
+    <div class="dropdown">
+        <button class="dropdown-btn">Notebooks</button>
+        <div class="dropdown-content">
+            {% for notebook in notebooks %}
+            <a href="{{ url_for('notebook_page', notebook_key=notebook.key) }}">{{ notebook.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</nav>
+<style>
+    .main-nav {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 0.5rem 1rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .main-nav a {
+        color: #eee;
+        text-decoration: none;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+    .main-nav a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-btn {
+        background: transparent;
+        border: none;
+        color: #eee;
+        padding: 0.5rem;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1a1a1a;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 4px;
+    }
+    .dropdown-content a {
+        color: #eee;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover { background-color: rgba(255, 255, 255, 0.1); }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown:hover .dropdown-btn { background-color: rgba(255, 255, 255, 0.1); }
+</style>

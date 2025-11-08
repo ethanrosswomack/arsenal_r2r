@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "root": "assets/tracks",
+  "generated_at": "2025-11-08T10:24:35Z",
+  "tracks": [
+    {
+      "sku": "HAWK-BAP-01",
+      "track_id": "warning_shots",
+      "audio": "assets/tracks/HAWK-BAP-01/warning_shots.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-01/warning_shots.md",
+      "cover": "assets/tracks/HAWK-BAP-01/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-02",
+      "track_id": "behold_a_pale_horse",
+      "audio": "assets/tracks/HAWK-BAP-02/behold_a_pale_horse.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-02/behold_a_pale_horse.md",
+      "cover": "assets/tracks/HAWK-BAP-02/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-03",
+      "track_id": "kamikaze",
+      "audio": "assets/tracks/HAWK-BAP-03/kamikaze.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-03/kamikaze.md",
+      "cover": "assets/tracks/HAWK-BAP-03/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-04",
+      "track_id": "whistle_blower",
+      "audio": "assets/tracks/HAWK-BAP-04/whistle_blower.mp3",
+      "lyrics": null,
+      "cover": "assets/tracks/HAWK-BAP-04/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-05",
+      "track_id": "scripture",
+      "audio": "assets/tracks/HAWK-BAP-05/scripture.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-05/scripture.md",
+      "cover": "assets/tracks/HAWK-BAP-05/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-06",
+      "track_id": "superstitious",
+      "audio": "assets/tracks/HAWK-BAP-06/superstitious.mp3",
+      "lyrics": null,
+      "cover": "assets/tracks/HAWK-BAP-06/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-07",
+      "track_id": "menace_to_society",
+      "audio": "assets/tracks/HAWK-BAP-07/menace_to_society.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-07/menace_to_society.md",
+      "cover": "assets/tracks/HAWK-BAP-07/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-08",
+      "track_id": "semi-automatic",
+      "audio": "assets/tracks/HAWK-BAP-08/semi-automatic.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-08/semi-automatic.md",
+      "cover": "assets/tracks/HAWK-BAP-08/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-09",
+      "track_id": "reverse_this_curse",
+      "audio": "assets/tracks/HAWK-BAP-09/reverse_this_curse.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-09/reverse_this_curse.md",
+      "cover": "assets/tracks/HAWK-BAP-09/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-10",
+      "track_id": "kt",
+      "audio": "assets/tracks/HAWK-BAP-10/kt.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-10/kt.md",
+      "cover": "assets/tracks/HAWK-BAP-10/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-11",
+      "track_id": "The Story Celebrated Throughout Time",
+      "audio": "assets/tracks/HAWK-BAP-11/The Story Celebrated Throughout Time.mp3",
+      "lyrics": null,
+      "cover": "assets/tracks/HAWK-BAP-11/cover.png"
+    },
+    {
+      "sku": "HAWK-BAP-11",
+      "track_id": "the_story_celebrated_throughout_time",
+      "audio": "assets/tracks/HAWK-BAP-11/the_story_celebrated_throughout_time.mp3",
+      "lyrics": "assets/tracks/HAWK-BAP-11/the_story_celebrated_throughout_time.md",
+      "cover": "assets/tracks/HAWK-BAP-11/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-01",
+      "track_id": "swordfish",
+      "audio": "assets/tracks/HAWK-FD-01/swordfish.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-01/swordfish.md",
+      "cover": "assets/tracks/HAWK-FD-01/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-02",
+      "track_id": "mic_check",
+      "audio": "assets/tracks/HAWK-FD-02/mic_check.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-02/mic_check.md",
+      "cover": "assets/tracks/HAWK-FD-02/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-03",
+      "track_id": "shakur",
+      "audio": "assets/tracks/HAWK-FD-03/shakur.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-03/shakur.md",
+      "cover": "assets/tracks/HAWK-FD-03/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-04",
+      "track_id": "last_one_left",
+      "audio": "assets/tracks/HAWK-FD-04/last_one_left.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-04/last_one_left.md",
+      "cover": "assets/tracks/HAWK-FD-04/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-05",
+      "track_id": "full_disclosure",
+      "audio": "assets/tracks/HAWK-FD-05/full_disclosure.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-05/full_disclosure.md",
+      "cover": "assets/tracks/HAWK-FD-05/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-06",
+      "track_id": "lifted",
+      "audio": "assets/tracks/HAWK-FD-06/lifted.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-06/lifted.md",
+      "cover": "assets/tracks/HAWK-FD-06/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-07",
+      "track_id": "fuck_society",
+      "audio": "assets/tracks/HAWK-FD-07/fuck_society.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-07/fuck_society.md",
+      "cover": "assets/tracks/HAWK-FD-07/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-08",
+      "track_id": "ashes",
+      "audio": "assets/tracks/HAWK-FD-08/ashes.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-08/ashes.md",
+      "cover": "assets/tracks/HAWK-FD-08/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-09",
+      "track_id": "haunted",
+      "audio": "assets/tracks/HAWK-FD-09/haunted.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-09/haunted.md",
+      "cover": "assets/tracks/HAWK-FD-09/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-10",
+      "track_id": "monumental",
+      "audio": "assets/tracks/HAWK-FD-10/monumental.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-10/monumental.md",
+      "cover": "assets/tracks/HAWK-FD-10/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-11",
+      "track_id": "trafficked",
+      "audio": "assets/tracks/HAWK-FD-11/trafficked.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-11/trafficked.md",
+      "cover": "assets/tracks/HAWK-FD-11/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-12",
+      "track_id": "hocus_pocus",
+      "audio": "assets/tracks/HAWK-FD-12/hocus_pocus.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-12/hocus_pocus.md",
+      "cover": "assets/tracks/HAWK-FD-12/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-13",
+      "track_id": "syntax",
+      "audio": "assets/tracks/HAWK-FD-13/syntax.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-13/syntax.md",
+      "cover": "assets/tracks/HAWK-FD-13/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-14",
+      "track_id": "stay_real",
+      "audio": "assets/tracks/HAWK-FD-14/stay_real.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-14/stay_real.md",
+      "cover": "assets/tracks/HAWK-FD-14/cover.png"
+    },
+    {
+      "sku": "HAWK-FD-15",
+      "track_id": "the_story_of_our_former_glory",
+      "audio": "assets/tracks/HAWK-FD-15/the_story_of_our_former_glory.mp3",
+      "lyrics": "assets/tracks/HAWK-FD-15/the_story_of_our_former_glory.md",
+      "cover": "assets/tracks/HAWK-FD-15/cover.png"
+    },
+    {
+      "sku": "HAWK-M-01",
+      "track_id": "soft_disclosure",
+      "audio": "assets/tracks/HAWK-M-01/soft_disclosure.mp3",
+      "lyrics": "assets/tracks/HAWK-M-01/soft_disclosure.md",
+      "cover": "assets/tracks/HAWK-M-01/cover.png"
+    },
+    {
+      "sku": "HAWK-M-02",
+      "track_id": "abreactions",
+      "audio": "assets/tracks/HAWK-M-02/abreactions.mp3",
+      "lyrics": "assets/tracks/HAWK-M-02/abreactions.md",
+      "cover": "assets/tracks/HAWK-M-02/cover.png"
+    },
+    {
+      "sku": "HAWK-M-03",
+      "track_id": "eyes_wide_open",
+      "audio": "assets/tracks/HAWK-M-03/eyes_wide_open.mp3",
+      "lyrics": "assets/tracks/HAWK-M-03/eyes_wide_open.md",
+      "cover": "assets/tracks/HAWK-M-03/cover.png"
+    },
+    {
+      "sku": "HAWK-M-04",
+      "track_id": "delta_squad",
+      "audio": "assets/tracks/HAWK-M-04/delta_squad.mp3",
+      "lyrics": "assets/tracks/HAWK-M-04/delta_squad.md",
+      "cover": "assets/tracks/HAWK-M-04/cover.png"
+    },
+    {
+      "sku": "HAWK-M-05",
+      "track_id": "implants",
+      "audio": "assets/tracks/HAWK-M-05/implants.mp3",
+      "lyrics": "assets/tracks/HAWK-M-05/implants.md",
+      "cover": "assets/tracks/HAWK-M-05/cover.png"
+    },
+    {
+      "sku": "HAWK-M-06",
+      "track_id": "illuminati",
+      "audio": "assets/tracks/HAWK-M-06/illuminati.mp3",
+      "lyrics": "assets/tracks/HAWK-M-06/illuminati.md",
+      "cover": "assets/tracks/HAWK-M-06/cover.png"
+    },
+    {
+      "sku": "HAWK-M-07",
+      "track_id": "fema",
+      "audio": "assets/tracks/HAWK-M-07/fema.mp3",
+      "lyrics": "assets/tracks/HAWK-M-07/fema.md",
+      "cover": "assets/tracks/HAWK-M-07/cover.png"
+    },
+    {
+      "sku": "HAWK-M-08",
+      "track_id": "the_antidote",
+      "audio": "assets/tracks/HAWK-M-08/the_antidote.mp3",
+      "lyrics": "assets/tracks/HAWK-M-08/the_antidote.md",
+      "cover": "assets/tracks/HAWK-M-08/cover.png"
+    },
+    {
+      "sku": "HAWK-M-09",
+      "track_id": "avalanche",
+      "audio": "assets/tracks/HAWK-M-09/avalanche.mp3",
+      "lyrics": "assets/tracks/HAWK-M-09/avalanche.md",
+      "cover": "assets/tracks/HAWK-M-09/cover.png"
+    },
+    {
+      "sku": "HAWK-M-10",
+      "track_id": "artificial_intelligence",
+      "audio": "assets/tracks/HAWK-M-10/artificial_intelligence.mp3",
+      "lyrics": "assets/tracks/HAWK-M-10/artificial_intelligence.md",
+      "cover": "assets/tracks/HAWK-M-10/cover.png"
+    },
+    {
+      "sku": "HAWK-M-11",
+      "track_id": "legion",
+      "audio": "assets/tracks/HAWK-M-11/legion.mp3",
+      "lyrics": "assets/tracks/HAWK-M-11/legion.md",
+      "cover": "assets/tracks/HAWK-M-11/cover.png"
+    },
+    {
+      "sku": "HAWK-M-12",
+      "track_id": "when_my_elites_surround",
+      "audio": "assets/tracks/HAWK-M-12/when_my_elites_surround.mp3",
+      "lyrics": "assets/tracks/HAWK-M-12/when_my_elites_surround.md",
+      "cover": "assets/tracks/HAWK-M-12/cover.png"
+    },
+    {
+      "sku": "HAWK-M-13",
+      "track_id": "reincarnated_2_resist",
+      "audio": "assets/tracks/HAWK-M-13/reincarnated_2_resist.mp3",
+      "lyrics": "assets/tracks/HAWK-M-13/reincarnated_2_resist.md",
+      "cover": "assets/tracks/HAWK-M-13/cover.png"
+    },
+    {
+      "sku": "HAWK-ME-01",
+      "track_id": "malicious",
+      "audio": "assets/tracks/HAWK-ME-01/malicious.mp3",
+      "lyrics": "assets/tracks/HAWK-ME-01/malicious.md",
+      "cover": "assets/tracks/HAWK-ME-01/cover.png"
+    },
+    {
+      "sku": "HAWK-ME-02",
+      "track_id": "gang_shit",
+      "audio": "assets/tracks/HAWK-ME-02/gang_shit.mp3",
+      "lyrics": "assets/tracks/HAWK-ME-02/gang_shit.md",
+      "cover": "assets/tracks/HAWK-ME-02/cover.png"
+    },
+    {
+      "sku": "HAWK-ME-03",
+      "track_id": "the_motherfucking_problem",
+      "audio": "assets/tracks/HAWK-ME-03/the_motherfucking_problem.mp3",
+      "lyrics": "assets/tracks/HAWK-ME-03/the_motherfucking_problem.md",
+      "cover": "assets/tracks/HAWK-ME-03/cover.png"
+    },
+    {
+      "sku": "HAWK-ME-04",
+      "track_id": "im_him",
+      "audio": "assets/tracks/HAWK-ME-04/im_him.mp3",
+      "lyrics": "assets/tracks/HAWK-ME-04/im_him.md",
+      "cover": "assets/tracks/HAWK-ME-04/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-01",
+      "track_id": "psychological_warfare",
+      "audio": "assets/tracks/HAWK-SB-01/psychological_warfare.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-01/psychological_warfare.md",
+      "cover": "assets/tracks/HAWK-SB-01/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-02",
+      "track_id": "down_the_rabbit_hole",
+      "audio": "assets/tracks/HAWK-SB-02/down_the_rabbit_hole.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-02/down_the_rabbit_hole.md",
+      "cover": "assets/tracks/HAWK-SB-02/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-03",
+      "track_id": "domestic_terrorist",
+      "audio": "assets/tracks/HAWK-SB-03/domestic_terrorist.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-03/domestic_terrorist.md",
+      "cover": "assets/tracks/HAWK-SB-03/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-04",
+      "track_id": "relentless",
+      "audio": "assets/tracks/HAWK-SB-04/relentless.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-04/relentless.md",
+      "cover": "assets/tracks/HAWK-SB-04/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-05",
+      "track_id": "never_heard_of_me",
+      "audio": "assets/tracks/HAWK-SB-05/never_heard_of_me.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-05/never_heard_of_me.md",
+      "cover": "assets/tracks/HAWK-SB-05/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-06",
+      "track_id": "spiteful_poetry",
+      "audio": "assets/tracks/HAWK-SB-06/spiteful_poetry.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-06/spiteful_poetry.md",
+      "cover": "assets/tracks/HAWK-SB-06/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-07",
+      "track_id": "the_devils_in_the_details",
+      "audio": "assets/tracks/HAWK-SB-07/the_devils_in_the_details.mp3",
+      "lyrics": null,
+      "cover": "assets/tracks/HAWK-SB-07/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-08",
+      "track_id": "the_game",
+      "audio": "assets/tracks/HAWK-SB-08/the_game.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-08/the_game.md",
+      "cover": "assets/tracks/HAWK-SB-08/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-09",
+      "track_id": "the_shadow_is_rising",
+      "audio": "assets/tracks/HAWK-SB-09/the_shadow_is_rising.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-09/the_shadow_is_rising.md",
+      "cover": "assets/tracks/HAWK-SB-09/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-10",
+      "track_id": "when_shit_gets_real",
+      "audio": "assets/tracks/HAWK-SB-10/when_shit_gets_real.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-10/when_shit_gets_real.md",
+      "cover": "assets/tracks/HAWK-SB-10/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-11",
+      "track_id": "synthesis",
+      "audio": "assets/tracks/HAWK-SB-11/synthesis.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-11/synthesis.md",
+      "cover": "assets/tracks/HAWK-SB-11/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-12",
+      "track_id": "invokation",
+      "audio": "assets/tracks/HAWK-SB-12/invokation.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-12/invokation.md",
+      "cover": "assets/tracks/HAWK-SB-12/cover.png"
+    },
+    {
+      "sku": "HAWK-SB-13",
+      "track_id": "krystal_klear",
+      "audio": "assets/tracks/HAWK-SB-13/krystal_klear.mp3",
+      "lyrics": "assets/tracks/HAWK-SB-13/krystal_klear.md",
+      "cover": "assets/tracks/HAWK-SB-13/cover.png"
+    },
+    {
+      "sku": "HAWK-SG-01",
+      "track_id": "will_you_listen",
+      "audio": "assets/tracks/HAWK-SG-01/will_you_listen.mp3",
+      "lyrics": "assets/tracks/HAWK-SG-01/will_you_listen.md",
+      "cover": "assets/tracks/HAWK-SG-01/cover.png"
+    },
+    {
+      "sku": "HAWK-SG-02",
+      "track_id": "psyops",
+      "audio": "assets/tracks/HAWK-SG-02/psyops.mp3",
+      "lyrics": "assets/tracks/HAWK-SG-02/psyops.md",
+      "cover": "assets/tracks/HAWK-SG-02/cover.png"
+    },
+    {
+      "sku": "HAWK-SG-03",
+      "track_id": "Incantations",
+      "audio": "assets/tracks/HAWK-SG-03/Incantations.mp3",
+      "lyrics": "assets/tracks/HAWK-SG-03/Incantations.md",
+      "cover": "assets/tracks/HAWK-SG-03/cover.png"
+    },
+    {
+      "sku": "HAWK-SG-04",
+      "track_id": "MindControl",
+      "audio": "assets/tracks/HAWK-SG-04/MindControl.mp3",
+      "lyrics": null,
+      "cover": "assets/tracks/HAWK-SG-04/cover.png"
+    },
+    {
+      "sku": "HAWK-SG-05",
+      "track_id": "return_of_kings",
+      "audio": "assets/tracks/HAWK-SG-05/return_of_kings.mp3",
+      "lyrics": "assets/tracks/HAWK-SG-05/return_of_kings.md",
+      "cover": "assets/tracks/HAWK-SG-05/cover.png"
+    },
+    {
+      "sku": "HAWK-SG-06",
+      "track_id": "politicians",
+      "audio": "assets/tracks/HAWK-SG-06/politicians.mp3",
+      "lyrics": "assets/tracks/HAWK-SG-06/politicians.md",
+      "cover": "assets/tracks/HAWK-SG-06/cover.png"
+    }
+  ]
+}

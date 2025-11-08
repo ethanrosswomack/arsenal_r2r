@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} - Omniversal Arsenal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/styles.css') }}">
+    <style>
+        .notebook-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            line-height: 1.7;
+        }
+        .notebook-content h1, .notebook-content h2, .notebook-content h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .notebook-content pre {
+            white-space: pre-wrap;
+            background: rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="notebook-content">
+        <h1>{{ title }}</h1>
+        {{ content }}
+    </div>
+</body>
+</html>
