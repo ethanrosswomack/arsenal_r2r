@@ -104,3 +104,117 @@ body {
 @media (max-width: 900px){
   .hero { grid-template-columns: 1fr; }
 }
+
+/* nav.html styles */
+.main-nav {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.main-nav a {
+    color: #eee;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+.main-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-btn {
+    background: transparent;
+    border: none;
+    color: #eee;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+.dropdown-content a {
+    color: #eee;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover { background-color: rgba(255, 255, 255, 0.1); }
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropdown-btn { background-color: rgba(255, 255, 255, 0.1); }
+
+/* index.html styles */
+.album-group {
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.album-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.album-cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.album-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+.album-item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.album-item-list li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #eee;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.album-item-list li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.item-type {
+    color: #888;
+    text-transform: capitalize;
+}
+
+/* notebook.html styles */
+.notebook-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    line-height: 1.7;
+}
+.notebook-content h1, .notebook-content h2, .notebook-content h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+.notebook-content pre {
+    white-space: pre-wrap;
+    background: rgba(0,0,0,0.2);
+    padding: 1rem;
+    border-radius: 4px;
+}

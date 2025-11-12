@@ -1,0 +1,13 @@
+<nav class="main-nav">
+    <a href="{{ url_for('index') }}">Home</a>
+    {% if notebooks %}
+    <div class="dropdown">
+        <button class="dropdown-btn">Notebooks</button>
+        <div class="dropdown-content">
+            {% for notebook in notebooks %}
+            <a href="{{ url_for('notebook_page', notebook_key=notebook.key) }}">{{ notebook.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</nav>
