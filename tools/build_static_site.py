@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 """
-Converts the Arsenal project into a fully static HTML website.
-
-This script reads all content from the `assets` directory, generates individual
-HTML pages for each song, and creates a JSON file to power the homepage. The
-output is a complete, self-contained website in the `dist` folder, ready for
-deployment on any static hosting service.
+Converts the Arsenal project into a fully static HTML website with media URLs
+pointing to Cloudflare R2.
 """
 import json
 import shutil
@@ -17,19 +13,21 @@ from collections import defaultdict
 SITE_ROOT = Path(__file__).resolve().parent.parent
 DIST_DIR = SITE_ROOT / "dist"
 ASSETS_DIR = SITE_ROOT / "assets"
-STATIC_DIR = DIST_DIR / "static"
 TEMPLATE_DIR = SITE_ROOT / "templates"
 
-AUDIO_EXTS = {".mp3", ".m4a", ".ogg", ".wav", ".flac", ".aac"}
-IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
-TEXT_EXTS = {".txt", ".lrc", ".md"}
+# --- R2 and URL Configuration ---
+BASE_R2_URL = "https://r2.reincarnated2resist.com"
+ALBUM_DIR_MAP = {
+    "SG": "01_singles",
+    "FD": "02_full-disclosure",
+    "BAP": "03_behold-a-pale-horse",
+    "M": "04_milabs",
+    "SB": "05_shadow-banned",
+    "ME": "06_malicious-ep",
+}
 
-def find_first_file_by_ext(directory: Path, extensions: set):
-    """Find the first file in a directory matching a set of extensions."""
-    for p in directory.iterdir():
-        if p.is_file() and p.suffix.lower() in extensions:
-            return p
-    return None
+AUDIO_EXTS = {".mp3", ".m4a", ".ogg", ".wav", ".flac", ".aac"}
+TEXT_EXTS = {".txt", ".lrc", ".md"}
 
 def format_title(text: str):
     """Converts a filename-safe string to a more readable title."""
@@ -37,122 +35,127 @@ def format_title(text: str):
 
 def build_song_data():
     """
-    Scans the assets directory to build a structured list of all songs and albums.
+    Scans the local assets directory to build a structured list of all songs,
+    generating public R2 URLs for all media.
     """
     content_root = ASSETS_DIR / "tracks"
     if not content_root.exists():
         raise SystemExit(f"Content directory not found: `{content_root}`")
 
     all_songs = []
-    for sku_dir in content_root.iterdir():
+    for sku_dir in sorted(content_root.iterdir()):
         if not sku_dir.is_dir():
             continue
 
+        # Expect dirs like HAWK-SG-01, HAWK-SB-03, etc.
+        match = re.match(r"HAWK-([A-Z]+)-([0-9]+)$", sku_dir.name)
+        if not match:
+            print(f"[SKIP] Directory '{sku_dir.name}' does not match expected SKU pattern.")
+            continue
+
+        album_code, track_num_str = match.groups()
         sku = sku_dir.name
-        album_title = format_title(sku)
-        album_image_file = find_first_file_by_ext(sku_dir, IMAGE_EXTS)
+        album_r2_dir = ALBUM_DIR_MAP.get(album_code)
 
-        for file in sku_dir.iterdir():
-            if file.is_file() and file.suffix.lower() in AUDIO_EXTS:
-                key = f"{sku}-{file.stem}"
-                title = format_title(file.stem)
-                
-                lyrics_path = ""
-                for ext in TEXT_EXTS:
-                    potential_lyrics_file = sku_dir / f"{file.stem}{ext}"
-                    if potential_lyrics_file.is_file():
-                        lyrics_path = potential_lyrics_file.relative_to(ASSETS_DIR).as_posix()
-                        break
-                
-                all_songs.append({
-                    "key": key,
-                    "sku": sku,
-                    "title": title,
-                    "album": album_title,
-                    "type": "track",
-                    "audio_path": file.relative_to(ASSETS_DIR).as_posix(),
-                    "image_path": album_image_file.relative_to(ASSETS_DIR).as_posix() if album_image_file else "",
-                    "lyrics_path": lyrics_path,
-                })
+        if not album_r2_dir:
+            print(f"[WARN] No R2 directory mapping for album code '{album_code}' in SKU '{sku}'.")
+            continue
 
-    # Group songs by album
+        # Find the audio file to determine the slug
+        audio_files = list(sku_dir.glob("*.mp3"))
+        if not audio_files:
+            print(f"[WARN] No .mp3 file found in {sku_dir.name}")
+            continue
+        
+        slug = audio_files[0].stem
+        
+        # Find the local lyrics file path for embedding content
+        local_lyrics_path = ""
+        for ext in TEXT_EXTS:
+            potential_lyrics_file = sku_dir / f"{slug}{ext}"
+            if potential_lyrics_file.is_file():
+                local_lyrics_path = potential_lyrics_file.relative_to(ASSETS_DIR).as_posix()
+                break
+
+        all_songs.append({
+            "key": sku,
+            "sku": sku,
+            "title": format_title(slug),
+            "album": format_title(sku_dir.name),
+            "type": "track",
+            "audio_path": f"{BASE_R2_URL}/{album_r2_dir}/{sku}/{slug}.mp3",
+            "image_path": f"{BASE_R2_URL}/{album_r2_dir}/{sku}/cover.png",
+            "local_lyrics_path": local_lyrics_path, # Used only during build
+        })
+
+    # Group songs by album for the main JSON data file
     albums = defaultdict(lambda: {'items': [], 'image_path': ''})
     for song in sorted(all_songs, key=lambda s: s['title']):
         album_title = song['album']
         albums[album_title]['items'].append(song)
         if not albums[album_title]['image_path'] and song['image_path']:
-            albums[album_title]['image_path'] = f"static/{song['image_path']}"
+            albums[album_title]['image_path'] = song['image_path']
 
-    # Convert to a list of dicts for JSON
-    result = []
-    for album_title, data in albums.items():
-        result.append({
-            'title': album_title,
-            'image_path': data['image_path'],
-            'items': data['items']
-        })
-    return result
+    result = [{'title': title, **data} for title, data in albums.items()]
+    return result, all_songs
 
 def main():
     """Generates the static site."""
     print("Starting static site build...")
 
-    # 1. Clean and recreate the output directory
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
     DIST_DIR.mkdir()
-    print(f"Created clean output directory: {DIST_DIR}")
+    
+    # Copy only necessary static files (CSS, JS)
+    # We no longer copy the entire assets folder, as media is on R2
+    static_dest = DIST_DIR / "static"
+    static_dest.mkdir()
+    shutil.copy(ASSETS_DIR / "styles.css", static_dest)
+    shutil.copy(ASSETS_DIR / "main.js", static_dest)
+    print(f"Copied essential assets to: {static_dest.relative_to(SITE_ROOT)}")
 
-    # 2. Copy static assets (CSS, JS, images, audio)
-    shutil.copytree(ASSETS_DIR, STATIC_DIR)
-    print(f"Copied assets to: {STATIC_DIR}")
-
-    # 3. Build the song data and write it to a JSON file
-    song_data = build_song_data()
+    album_data, all_songs = build_song_data()
+    
+    # Write the main data file for the homepage
     api_dir = DIST_DIR / "api"
     api_dir.mkdir()
     with (api_dir / "data.json").open("w", encoding="utf-8") as f:
-        json.dump(song_data, f, indent=2)
-    print("Generated song data at: api/data.json")
+        json.dump(album_data, f, indent=2)
+    print("Generated R2-powered song data at: api/data.json")
 
-    # 4. Generate individual song pages
+    # Generate individual song pages
     content_template = (TEMPLATE_DIR / "content.html").read_text(encoding="utf-8")
     nav_template = (TEMPLATE_DIR / "nav.html").read_text(encoding="utf-8")
     content_dir = DIST_DIR / "content"
     content_dir.mkdir()
 
-    all_songs = [song for album in song_data for song in album['items']]
-
     for song in all_songs:
         lyrics = "No lyrics available for this song."
-        if song['lyrics_path']:
-            lyrics_file = ASSETS_DIR / song['lyrics_path']
+        if song['local_lyrics_path']:
+            lyrics_file = ASSETS_DIR / song['local_lyrics_path']
             if lyrics_file.exists():
-                lyrics = lyrics_file.read_text(encoding='utf-8')
+                lyrics = f"<pre>{lyrics_file.read_text(encoding='utf-8')}</pre>"
 
-        # Replace placeholders in the template
         page_content = content_template.replace("{{ title }}", song['title'])
-        page_content = page_content.replace("{{ content }}", f"<pre>{lyrics}</pre>")
-        page_content = page_content.replace("{{ audio_url }}", f"../static/{song['audio_path']}")
-        page_content = page_content.replace("{{ image_url }}", f"../static/{song['image_path']}")
+        page_content = page_content.replace("{{ content }}", lyrics)
+        page_content = page_content.replace("{{ audio_url }}", song['audio_path'])
+        page_content = page_content.replace("{{ image_url }}", song['image_path'])
         page_content = page_content.replace("{% include 'nav.html' %}", nav_template)
 
-        # Write the final HTML file
         output_path = content_dir / f"{song['key']}.html"
         output_path.write_text(page_content, encoding="utf-8")
     
-    print(f"Generated {len(all_songs)} song pages in: {content_dir.relative_to(SITE_ROOT)}")
+    print(f"Generated {len(all_songs)} song pages with R2 URLs.")
 
-    # 5. Process and copy main HTML pages
+    # Process and copy main index page
     index_template = (TEMPLATE_DIR / "index.html").read_text(encoding="utf-8")
-    index_nav_template = (TEMPLATE_DIR / "nav.html").read_text(encoding="utf-8").replace("../index.html", "index.html")
+    index_nav_template = nav_template.replace("../index.html", "index.html")
     index_content = index_template.replace("{% include 'nav.html' %}", index_nav_template)
     (DIST_DIR / "index.html").write_text(index_content, encoding="utf-8")
-    
-    print(f"Copied main HTML pages to: {DIST_DIR.relative_to(SITE_ROOT)}")
+    print(f"Processed and copied index.html to: {DIST_DIR.relative_to(SITE_ROOT)}")
 
-
-    print("\\n✅ Static site build complete!")
+    print("\n✅ Static site build complete!")
     print(f"Output is in the `{DIST_DIR.relative_to(SITE_ROOT)}` directory.")
 
 if __name__ == "__main__":
