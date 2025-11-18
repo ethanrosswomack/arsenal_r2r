@@ -19,11 +19,11 @@ TEMPLATE_DIR = SITE_ROOT / "templates"
 BASE_R2_URL = "https://r2.reincarnated2resist.com"
 ALBUM_DIR_MAP = {
     "SG": "01_singles",
-    "FD": "02_full-disclosure",
-    "BAP": "03_behold-a-pale-horse",
-    "M": "04_milabs",
-    "SB": "05_shadow-banned",
-    "ME": "06_malicious-ep",
+    "FD": "02_mixtape_sessions/01_full_disclosure",
+    "BAP": "02_mixtape_sessions/02_behold_a_pale_horse",
+    "M": "02_mixtape_sessions/03_milabs",
+    "ME": "03_phase2/04_malicious",
+    "SB": "03_phase2/05_shadow_banned",
 }
 
 AUDIO_EXTS = {".mp3", ".m4a", ".ogg", ".wav", ".flac", ".aac"}
