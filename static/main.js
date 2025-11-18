@@ -62,7 +62,7 @@
       
       let itemsHtml = matchingItems.map(item => `
         <li>
-          <a href="/content/${item.key}">
+          <a href="content/${item.key}.html">
             <span class="item-title">${item.title}</span>
             <span class="item-type">${item.type}</span>
           </a>
@@ -88,7 +88,7 @@
 
   async function loadCatalog() {
     try {
-      const res = await fetch('/api/albums');
+      const res = await fetch('api/data.json');
       if (!res.ok) {
         throw new Error(`Failed to load catalog: ${res.status}`);
       }

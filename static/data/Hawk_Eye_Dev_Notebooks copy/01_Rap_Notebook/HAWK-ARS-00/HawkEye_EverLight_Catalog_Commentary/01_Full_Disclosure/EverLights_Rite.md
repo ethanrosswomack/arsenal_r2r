@@ -1,3 +1,0 @@
-# Full Disclosure — EverLight's Rite
-
-A lyrical investigation into the awakening journey and layered messaging found within *Full Disclosure*. Themes include resistance, reincarnation, tribal unity, and information warfare...

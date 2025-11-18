@@ -1,8 +1,0 @@
----
-title: Lyrical Precision Hoodie
-source_file: Hawk_Eye_Dev_Notebooks copy/03_Hawk_Eye_Store/Best Sellers/Lyrical Precision Hoodie.ipynb
----
-
-# Lyrical Precision Hoodie
-
-(Describe the design here.)

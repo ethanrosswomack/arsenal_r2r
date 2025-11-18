@@ -8,58 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles.css">
-    <style>
-        .album-group {
-            margin-bottom: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .album-header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .album-cover {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .album-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            margin: 0;
-        }
-        .album-item-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .album-item-list li a {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 1rem;
-            text-decoration: none;
-            color: #eee;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-        .album-item-list li a:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .item-type {
-            color: #888;
-            text-transform: capitalize;
-        }
-    </style>
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
 <canvas id="matrix"></canvas>
-{% include 'nav.html' %}
+<nav class="main-nav">
+    <a href="index.html">Home</a>
+</nav>
+
 <div class="page">
     <header class="hero">
         <div class="brand">
@@ -88,7 +44,7 @@
     </footer>
 </div>
 
-<script src="assets/main.js"></script>
+<script src="static/main.js"></script>
 
 </body>
 </html>

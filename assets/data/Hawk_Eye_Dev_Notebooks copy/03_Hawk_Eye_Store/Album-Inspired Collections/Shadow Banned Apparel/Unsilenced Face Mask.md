@@ -1,8 +1,0 @@
----
-title: Unsilenced Face Mask
-source_file: Hawk_Eye_Dev_Notebooks copy/03_Hawk_Eye_Store/Album-Inspired Collections/Shadow Banned Apparel/Unsilenced Face Mask.ipynb
----
-
-# Unsilenced Face Mask
-
-(Describe the design here.)
