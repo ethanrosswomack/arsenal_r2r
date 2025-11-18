@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HAWK-ARS-00 — Full Index</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://s3.omniversalaether.app/HAWK-ARS-00/index.html">
+<style>
+  :root{--bg:#0f1115;--panel:#141823;--text:#e6e8ee;--muted:#9ca3b0;--border:#242a38;--hover:#1b2130;--accent:#79ffe1}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Arial}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:28px auto;padding:0 16px}
+  .card{background:linear-gradient(180deg,var(--panel),#0f1422 120%);border:1px solid var(--border);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.35);overflow:hidden}
+  header{display:flex;gap:10px;align-items:center;padding:16px;border-bottom:1px solid var(--border)}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}
+  h1{margin:0;font-size:20px}
+  .muted{color:var(--muted)}
+  .search{padding:12px 16px;border-bottom:1px solid var(--border)}
+  .search input{width:100%;padding:10px 12px;border-radius:10px;background:#0f1628;border:1px solid var(--border);color:var(--text);outline:none}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;padding:12px}
+  .tile{border:1px solid var(--border);border-radius:12px;background:#101628;padding:12px}
+  .tile h3{margin:0 0 8px 0;font-size:16px}
+  .files{list-style:none;margin:0;padding:0}
+  .files li{border-top:1px solid #1d2435}
+  .files li:first-child{border-top:none}
+  .files a{display:block;padding:8px 6px;border-radius:8px}
+  .files a:hover{background:var(--hover)}
+  details.dir summary{cursor:pointer;padding:6px 0;font-weight:600}
+  .hide{display:none !important}
+  .footer{padding:12px 16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <header>
+      <div class="dot" aria-hidden="true"></div>
+      <div>
+        <h1>HAWK-ARS-00 — Full Index</h1>
+        <div class="muted">Auto-generated from file map (short path). Type to filter.</div>
+      </div>
+    </header>
+
+    <div class="search">
+      <input id="q" type="search" placeholder="Filter file and folder names…" autocomplete="off">
+    </div>
+
+    <div class="grid" id="grid">
+      <section class='tile'><h3>(root)</h3>
+<ul class='files'>
+<li><a href='./_ 🦅 HAWK EYE THE RAPPER_ The Voice of a Generatio.md'>_ 🦅 HAWK EYE THE RAPPER_ The Voice of a Generatio.md</a></li>
+<li><a href='./ARS-00.csv'>ARS-00.csv</a></li>
+<li><a href='./arsenal_catalog.csv'>arsenal_catalog.csv</a></li>
+<li><a href='./EverLightsRite_TheMixtapeSessions.md'>EverLightsRite_TheMixtapeSessions.md</a></li>
+<li><a href='./Main_Arsenal_Index.md'>Main_Arsenal_Index.md</a></li>
+<li><a href='./Master_Index.ipynb'>Master_Index.ipynb</a></li>
+<li><a href='./MEDIA.csv'>MEDIA.csv</a></li>
+<li><a href='../../README.md'>README.md</a></li>
+<li><a href='./The_Archive.ipynb'>The_Archive.ipynb</a></li>
+<li><a href='./Unmasking Reality_ Hawk Eye The Rapper_s _Mixtape .md'>Unmasking Reality_ Hawk Eye The Rapper_s _Mixtape .md</a></li>
+<li><a href='./Updated_Unified_Reincarnated_Store_Catalog.csv'>Updated_Unified_Reincarnated_Store_Catalog.csv</a></li>
+</ul></section>
+    </div>
+
+    <div class="footer">
+      This page prefers short-path URLs. Optional: keep <code>HAWK-ARS-00_manifest.json</code> beside it to insert newly added files later.
+    </div>
+  </div>
+</div>
+
+<script>
+// Client-side filter across all links, folder titles, and section headers
+(() => {
+  const q = document.getElementById('q');
+  const grid = document.getElementById('grid');
+  q.addEventListener('input', () => {
+    const term = q.value.trim().toLowerCase();
+    const tiles = [...grid.querySelectorAll('.tile')];
+    tiles.forEach(tile => {
+      let any = false;
+      const header = tile.querySelector('h3')?.textContent.toLowerCase() || '';
+      const links = [...tile.querySelectorAll('a')];
+      links.forEach(a => {
+        const t = a.textContent.toLowerCase();
+        const h = a.getAttribute('href') || '';
+        const show = !term || t.includes(term) || h.toLowerCase().includes(term) || header.includes(term);
+        a.parentElement.classList.toggle('hide', !show);
+        if (show) any = true;
+      });
+      tile.classList.toggle('hide', !any && !header.includes(term));
+    });
+  });
+
+  // Optional: merge-in manifest keys if present (append dynamically)
+  (async () => {
+    try {
+      const res = await fetch('./HAWK-ARS-00_manifest.json', { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      const keys = Array.isArray(data) ? data : (data.keys || []);
+      const bySection = new Map();
+      for (const k of keys) {
+        if (typeof k !== 'string') continue;
+        const rel = k.replace(/^HAWK-ARS-00\//,''); // short relative
+        const parts = rel.split('/');
+        const sect = parts.length > 1 ? parts[0] : '(root)';
+        if (!bySection.has(sect)) bySection.set(sect, []);
+        bySection.get(sect).push(rel);
+      }
+      // Append a "Discovered (manifest)" tile
+      if (bySection.size) {
+        const sec = document.createElement('section');
+        sec.className = 'tile';
+        sec.innerHTML = '<h3>Discovered (manifest)</h3><ul class="files"></ul>';
+        const ul = sec.querySelector('ul');
+        const added = new Set();
+        for (const rels of bySection.values()) {
+          for (const rel of rels.sort()) {
+            const name = rel.split('/').pop();
+            const href = './' + rel;
+            const key = rel.toLowerCase();
+            if (added.has(key)) continue;
+            added.add(key);
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${href}">${name}</a>`;
+            ul.appendChild(li);
+          }
+        }
+        if (ul.children.length) grid.appendChild(sec);
+      }
+    } catch (e) { /* ignore */ }
+  })();
+})();
+</script>
+</body>
+</html>
